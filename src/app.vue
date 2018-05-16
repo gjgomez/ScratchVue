@@ -1,10 +1,21 @@
 <template>
   <div class="full-width center-content">
-    <h1>Hello World!</h1>
+    <!-- <h1>Hello World!</h1> -->
+    <hello-component name="Chicago" />
   </div>
 </template>
 
-<style scoped lang="scss">
+<script>
+import HelloComponent from './components/hello-component.vue'
+
+export default {
+  components: {
+    HelloComponent
+  }
+}
+</script>
+
+<style lang="scss" scoped>
 $color-danger: red;
 
 .full-width {
