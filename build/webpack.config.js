@@ -12,9 +12,24 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../public"),    
     filename: 'main.js'
-  },
+  },  
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
       {
         test: /\.vue$/,
         use: 'vue-loader'
