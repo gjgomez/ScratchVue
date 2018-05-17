@@ -7,11 +7,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: [
-    './src/app.js'
+    './src/index.js'
   ],
   output: {
     path: path.resolve(__dirname, "../public"),    
-    filename: 'main.js'
+    filename: 'app.js'
   },  
   module: {
     rules: [
@@ -37,6 +37,11 @@ module.exports = {
       {
         test: /\.js$/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.(js|vue)$/,
+        use: 'eslint-loader',
+        enforce: 'pre'
       }
     ]
   },
