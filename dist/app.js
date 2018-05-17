@@ -106,4 +106,4 @@
 /*!****************************!*\
   !*** multi ./src/index.js ***!
   \****************************/
-/*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?')}});
+/*! no static exports found */function(module,exports,__webpack_require__){eval('module.exports = __webpack_require__(/*! C:\\Workspaces\\Personal\\scratch-vue\\src\\index.js */"./src/index.js");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?')}});

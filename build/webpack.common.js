@@ -8,10 +8,10 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: [
-    "./src/index.js"
+    path.resolve(__dirname, path.join("..", "src", "index.js"))
   ],
   output: {
-    path: path.resolve(__dirname, "../dist"),    
+    path: path.resolve(__dirname, path.join("..", "dist")),    
     filename: "app.js"
   },  
   module: {
@@ -50,12 +50,12 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "build/templates/index.html",
+      template: path.join("build", "templates", "index.html"),
       inject: true
     }),
     new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, "../src/static"),
-      to: path.resolve(__dirname, "../dist/static"),
+      from: path.resolve(__dirname, path.join("..", "src", "static")),
+      to: path.resolve(__dirname, path.join("..", "dist", "static")),
       toType: "dir"
     }])
   ]
