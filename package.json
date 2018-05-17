@@ -55,5 +55,39 @@
     "snapshotSerializers": [
       "<rootDir>/node_modules/jest-serializer-vue"
     ]
+  },
+  "babel": {
+    "presets": [
+      ["env", {
+        "modules": false,
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+        }
+      }]
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          ["env", { "targets": { "node": "current" }}]
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:vue/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true
+    },
+    "globals": {
+      "expect": true
+    }
   }
 }
