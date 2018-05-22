@@ -15,8 +15,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-danger: red;
-
 .full-width {
   width: 100%; 
 }
@@ -28,6 +26,6 @@ $color-danger: red;
 }
 
 h1 {
-  color: $color-danger;
+  color: $green;
 }
 </style>

@@ -28,7 +28,13 @@ module.exports = {
         use: [
           "vue-style-loader",
           "css-loader",
-          "sass-loader"
+          {
+            loader: 'sass-loader',
+            options: {
+              data: `@import "variables.scss";`,
+              includePaths: [path.resolve(__dirname, path.join("..", "src", "styles"))]
+            }
+          }
         ]
       },
       {
@@ -46,7 +52,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [
+  plugins: [    
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -54,8 +60,8 @@ module.exports = {
       inject: true
     }),
     new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, path.join("..", "src", "static")),
-      to: path.resolve(__dirname, path.join("..", "dist", "static")),
+      from: path.resolve(__dirname, path.join("..", "src", "static", "img")),
+      to: path.resolve(__dirname, path.join("..", "dist", "static", "img")),
       toType: "dir"
     }])
   ]
